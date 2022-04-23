@@ -2,7 +2,6 @@ import { Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { BaseRepository } from 'src/base/repo';
-import { CreateShortcodeDto } from '../dto/create-shortcode.dto';
 import { Shortcode, ShortcodeDocument } from './schema/shortcode.schema';
 /**
  * I use the .service.ts for the business logic and the repository for every type of
@@ -12,10 +11,11 @@ import { Shortcode, ShortcodeDocument } from './schema/shortcode.schema';
 export class ShortcodeRepository extends BaseRepository {
   protected logger = new Logger(ShortcodeRepository.name);
 
-  constructor(@InjectModel(Shortcode.name) private model: Model<ShortcodeDocument>) {
+  constructor(
+    @InjectModel(Shortcode.name) private model: Model<ShortcodeDocument>,
+  ) {
     super(model);
   }
-
 
   // findAll() {
   //   return `This action returns all Users`;

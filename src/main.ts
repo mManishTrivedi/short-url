@@ -14,7 +14,7 @@ async function bootstrap() {
 
   const configService: ConfigService = app.get<ConfigService>(ConfigService);
   //TODO: get server name from config
-  const logger = new Logger('Solar-IOT-Server');
+  const logger = new Logger('Short-URL-Server');
 
   app.useLogger(app.get(LoggerProvider));
   app.useGlobalInterceptors(new RequestLoggerInterceptor());
