@@ -17,11 +17,6 @@ import { MongooseModule } from '@nestjs/mongoose';
     ]),
   ],
   controllers: [ShortcodeController],
-  providers: [
-    ShortcodeService,
-    ShortcodeRepository,
-    // BaseService,
-    // BaseRepository,
-  ],
+  providers: [ShortcodeService, ShortcodeRepository],
 })
 export class ShortcodeModule {}
